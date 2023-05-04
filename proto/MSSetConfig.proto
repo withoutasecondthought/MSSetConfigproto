@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package setmsconfig;
+
+option go_package = "./setmsconfig";
+
+service ConfigService {
+  rpc Set(SetRequest) returns (google.protobuf.Empty) {}
+  rpc Reset(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+}
+
+message SetRequest {
+  int32 delay = 1;
+}
+
